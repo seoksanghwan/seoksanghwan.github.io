@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
+import { Navigation } from '../Navigation/Navigation';
+import { Main } from '../Main/Main';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <a
-            className="App-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Project List
-          </a>
-        </header>
-      </div>
+      <>
+        <Navigation />
+          <Switch>
+            <Route exact to="/" render={props => {
+              return <Main {...props} />
+            }} />
+          </Switch>
+      </>
     );
   }
 }

@@ -1,24 +1,14 @@
-@mixin headerStyle() {
-    &-header {
-        width: 100%;
-        padding: 15px;
-        
-        h2 {
-            width: 100%;
-            font-size: 2rem;
-            color: #FFF;
+@mixin mq( $screen ) {
+    @if $screen == "mobile" {
+        @media all and (min-width: 320px) and (max-width: 767px){
+            @content;
         }
     }
-}
-
-@mixin leftBar( $color ) {
-    content: "";
-    width: 8px;
-    height: 46px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: $color;
+    @else if $screen == "tablet" {
+        @media all and (min-width: 768px) and (max-width: 1023px){
+            @content;
+        }
+    }
 }
 
 @mixin scrollStyle {
@@ -30,8 +20,8 @@
     }
   
     &::-webkit-scrollbar {
-        width: 1px !important;
-        height: 1px !important;
+        width: 2px !important;
+        height: 2px !important;
         background-color: transparent !important;
         -webkit-appearance: none;
         background-color: transparent !important;
@@ -44,3 +34,38 @@
     background-color: #DDD !important;
     }
 }
+
+@mixin contentHeader {
+    width: 100%;
+    
+    h3 {
+        width: 100%;
+        padding: 0.8rem 0.5rem 0.4rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: $c-white;
+    }
+}
+
+@mixin barGradient($per) {
+    display: block;
+    width: 100%;
+    height: 1.6rem;
+    background: linear-gradient(to right, #FF453A, #C8BF08 $per, #32D74B);
+}
+
+@mixin ellipsis {
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin innerBorder {
+    border: 5px solid #385D8A;
+    padding: 1rem;
+}
+
+
+
+

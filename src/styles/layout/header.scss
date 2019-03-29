@@ -1,0 +1,62 @@
+header {
+  width: 100%;
+  padding: 1.5rem 0;
+  background: #fff;
+  .nav-content {
+    display: flex;
+    margin: 0 auto;
+    width: 1344px;
+    @include mq("tablet") {
+      width: 900px;
+    }
+
+    @include mq("mobile") {
+      width: 100%;
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title-logo {
+        min-height: 3.25rem;
+        h1 {
+          a {
+            img {
+              width: 50px;
+              vertical-align: middle;
+            }
+            em {
+              font-size: 3rem;
+              vertical-align: middle;
+              margin-left: 1.5rem;
+            }
+          }
+        }
+      }
+      .nav-menu {
+        ul {
+          align-items: stretch;
+          display: flex;
+          li {
+            margin : 0 1.5rem;
+            a {
+              font-size: 2.2rem;
+            }
+            &:last-child a {
+              border-radius: 20px;
+              border: 1px solid #36c5f1;
+              box-sizing: border-box;
+              padding : 1rem 2rem;
+              transition : all .2s ease-in;
+              &:hover {
+                background : #36c5f1;
+                color:#fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

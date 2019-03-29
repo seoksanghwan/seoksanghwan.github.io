@@ -3,4 +3,11 @@
 
 @import './styles/base/base';
 
+@import './styles/layout/header.scss';
 @import './styles/layout/App.scss';
+
+.wrap {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+}
