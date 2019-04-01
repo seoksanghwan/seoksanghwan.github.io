@@ -37,14 +37,20 @@
         border-radius: 100%;
         background: linear-gradient(#25c0f0, #2fecec);
         position: relative;
-        &:hover,
-        &:active,
-        &:focus {
+        &:hover {
           .img-me {
             opacity: 0;
           }
           .real-me {
             opacity: 1;
+          }
+          @include mq("mobile") {
+            .img-me {
+              opacity: 0;
+            }
+            .real-me {
+              opacity: 1;
+            }
           }
         }
         img {
@@ -57,10 +63,16 @@
             width: 320px;
             opacity: 0;
             margin-left: -160px;
+            @include mq("mobile") {
+              opacity: 1
+            }
           }
           &.img-me {
             opacity: 1;
             margin-left: -110px;
+            @include mq("mobile") {
+              opacity: 0;
+            }
           }
         }
         @include mq("mobile") {
@@ -279,7 +291,7 @@
           align-items: center;
           @include mq("mobile") {
             justify-content: flex-end;
-            background:rgba(16, 7, 58, 0.8);
+            background: rgba(16, 7, 58, 0.8);
           }
           img {
             width: 100%;

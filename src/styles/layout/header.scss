@@ -77,6 +77,10 @@ header {
               &:hover {
                 background: #36c5f1;
                 color: #fff;
+                @include mq("mobile") {
+                  background: none;
+                  color:#293347;
+                }
               }
             }
           }

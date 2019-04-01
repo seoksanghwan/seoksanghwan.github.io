@@ -52,6 +52,10 @@ footer {
             &:hover{
               background:#fff;  
               color:#434849;
+              @include mq("mobile") {
+                background:none;    
+                color:#fff;
+              }
             }
           }
         }
