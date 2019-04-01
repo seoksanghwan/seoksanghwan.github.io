@@ -3,8 +3,10 @@
 
 @import './styles/base/base';
 
-@import './styles/layout/header.scss';
-@import './styles/layout/App.scss';
+@import './styles/layout/header';
+@import './styles/layout/App';
+@import './styles/layout/footer';
+@import './styles/layout/NotSupport';
 
 .wrap {
   width: 100%;

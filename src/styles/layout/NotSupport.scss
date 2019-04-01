@@ -1,0 +1,60 @@
+.NotSupport {
+  display: block;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: -250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  ::selection {
+    background:none;
+  }
+  ::-moz-selection {
+    background:none;
+  }
+  ::-webkit-selection {
+    background:none;
+  }
+  p {
+    font-size: 2.5rem;
+    color: #222;
+    margin-top: 90px;
+    a {
+      display: block;
+      background: rgb(61, 126, 211);
+      color: #fff;
+      width: 200px;
+      padding: 20px 0;
+      margin: 10px auto 0 auto;
+      font-size: 2rem;
+      z-index: 10;
+    }
+  }
+  .NotSupportText {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-size: 8rem;
+    vertical-align: bottom;
+    font-weight: bold;
+    opacity: 0.2;
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Internet_Explorer_10%2B11_logo.svg/611px-Internet_Explorer_10%2B11_logo.svg.png")
+      no-repeat right bottom #eee;
+    background-size: 200px;
+    z-index: -1;
+  }
+}

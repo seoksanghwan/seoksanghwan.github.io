@@ -4,6 +4,9 @@
   min-height: 100%;
   max-height: 100%;
   margin: 10rem auto 0 auto;
+  @include mq("mobile") {
+    margin: 5rem auto 0 auto;
+  }
   .content {
     .about-me {
       .info-text {
@@ -14,6 +17,15 @@
           small {
             font-size: 3rem;
             font-weight: 200;
+            @include mq("mobile") {
+              font-size: 2rem;
+              em {
+                display: block;
+              }
+            }
+          }
+          @include mq("mobile") {
+            font-size: 3rem;
           }
         }
       }
@@ -25,7 +37,9 @@
         border-radius: 100%;
         background: linear-gradient(#25c0f0, #2fecec);
         position: relative;
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
           .img-me {
             opacity: 0;
           }
@@ -38,7 +52,7 @@
           position: absolute;
           bottom: -1rem;
           left: 50%;
-          transition: all .4s ease-in-out;
+          transition: all 0.4s ease-in-out;
           &.real-me {
             width: 320px;
             opacity: 0;
@@ -47,6 +61,20 @@
           &.img-me {
             opacity: 1;
             margin-left: -110px;
+          }
+        }
+        @include mq("mobile") {
+          width: 250px;
+          height: 250px;
+          img {
+            width: 170px;
+            &.real-me {
+              width: 270px;
+              margin-left: -135px;
+            }
+            &.img-me {
+              margin-left: -85px;
+            }
           }
         }
       }
@@ -59,29 +87,362 @@
   min-height: 100%;
   max-height: 100%;
   margin: 10rem auto 0 auto;
-  background: #25c0f0;
+  background: linear-gradient(#25c0f0 60%, #fff 40%);
+  @include mq("mobile") {
+    margin: 5rem auto 0 auto;
+  }
   .content {
-    padding : 5rem 0;
+    padding: 10rem 0;
+    @include mq("mobile") {
+      padding: 5rem 0;
+    }
     .introduce-myself {
       text-align: center;
+      width: 45%;
+      margin: 0 auto;
+      @include mq("tablet") {
+        width: 70%;
+      }
+      @include mq("mobile") {
+        width: 75%;
+      }
       h2 {
-        color : #fff;
-        font-size : 3rem;
+        color: #fff;
+        font-size: 4.5rem;
         font-weight: bold;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        span {
+          display: inline-block;
+          transform: rotate(0deg);
+          animation: hello 1s infinite linear;
+        }
+        em {
+          display: block;
+        }
+        line-height: 6rem;
+        @include mq("mobile") {
+          font-size: 2.3rem;
+          line-height: 4rem;
+        }
       }
       p {
-        color :#fff;
-        font-size : 2.2rem;
+        color: #fff;
+        font-size: 2.5rem;
+        line-height: 3.7rem;
+        @include mq("mobile") {
+          font-size: 1.9rem;
+        }
+        word-break: break-word;
       }
     }
     .career-spack {
-      width: 1000px;
-      height: 600px;
-      margin: 5rem auto;
+      width: 1200px;
+      margin: 6rem auto 0 auto;
+      @include mq("mobile") {
+        margin: 3rem auto 0 auto;
+      }
       border-radius: 50px;
       background: #fff;
-      box-shadow: 10px 10px 10px rgba(0,0,0,.3);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      border: 1px solid #dddddd;
+      display: flex;
+      justify-content: center;
+      @include mq("tablet") {
+        width: 90%;
+      }
+      @include mq("mobile") {
+        width: 80%;
+        display: block;
+      }
+      dl.my-part {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        padding: 5rem 0;
+        overflow: hidden;
+        @include mq("tablet") {
+          padding: 5rem 2rem;
+        }
+        @include mq("mobile") {
+          padding: 5rem 2rem;
+          border-bottom: 1px solid #dfdfdf;
+          &:last-child {
+            border: none;
+            border-left: none !important;
+          }
+        }
+        &:last-child {
+          border-left: 1px solid #dfdfdf;
+        }
+        dt {
+          img {
+            height: 50px;
+            margin-bottom: 5rem;
+          }
+          p {
+            font-size: 3rem;
+            font-weight: 500;
+          }
+          margin-bottom: 3.5rem;
+        }
+        dd {
+          font-size: 2.2rem;
+          font-weight: 200;
+          line-height: 3.7rem;
+          @include mq("tablet") {
+            font-size: 1.9rem;
+          }
+          h3 {
+            color: #25c0f0;
+            margin-bottom: 1.8rem;
+          }
+          p {
+            font-size: 2.2rem;
+            @include mq("tablet") {
+              font-size: 1.9rem;
+            }
+          }
+          ul {
+            margin-top: 1.8rem;
+            li {
+              font-size: 2.2rem;
+              margin-bottom: 1.4rem;
+            }
+          }
+          margin-bottom: 4rem;
+        }
+      }
     }
+  }
+}
+
+.my-recent-content {
+  padding: 10rem 0;
+  @include mq("mobile") {
+    padding: 5rem 0;
+  }
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+    @include mq("tablet") {
+      width: 90%;
+      overflow: hidden;
+    }
+    @include mq("mobile") {
+      width: 80%;
+    }
+    &-title {
+      width: 100%;
+      margin-bottom: 5rem;
+      text-align: center;
+      h2 {
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        @include mq("mobile") {
+          font-size: 2.5rem;
+        }
+      }
+      p {
+        font-size: 2.5rem;
+        line-height: 3.7rem;
+        a {
+          color: #25c0f0;
+          font-weight: bold;
+          text-decoration: underline;
+        }
+        @include mq("mobile") {
+          font-size: 1.9rem;
+        }
+      }
+    }
+    &-list {
+      ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        @include mq("tablet") {
+          justify-content: space-around;
+        }
+        @include mq("mobile") {
+          display: block;
+        }
+        li {
+          width: 380px;
+          height: 224px;
+          margin-right: 20px;
+          border-radius: 10px;
+          position: relative;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include mq("mobile") {
+            justify-content: flex-end;
+            background:rgba(16, 7, 58, 0.8);
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease-in;
+            @include mq("mobile") {
+              width: 48%;
+              height: auto;
+            }
+          }
+          @include mq("tablet") {
+            width: 47%;
+            margin: 0;
+          }
+          @include mq("mobile") {
+            width: 100%;
+            height: 180px;
+            margin: 0 0 5rem 0;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          .block-info {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(16, 7, 58, 0.8);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.2s ease-in;
+            z-index: 2;
+            @include mq("mobile") {
+              opacity: 1;
+              width: 52%;
+              left: 0;
+              top: 0;
+            }
+            p {
+              color: #fff;
+              font-size: 2.5rem;
+              margin: 4rem 0;
+              line-height: 4rem;
+              @include mq("mobile") {
+                font-size: 1.5rem;
+                line-height: 2rem;
+              }
+            }
+            a {
+              color: #fff;
+              font-size: 2.3rem;
+              border: 2px solid #25c0f0;
+              padding: 1rem 3rem;
+              border-radius: 20px;
+              svg {
+                margin-left: 1.5rem;
+              }
+              @include mq("mobile") {
+                font-size: 1.3rem;
+                padding: 1rem 1.9rem;
+              }
+            }
+          }
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+          &:hover {
+            .block-info {
+              opacity: 1;
+            }
+            img {
+              width: 110%;
+              height: 110%;
+              opacity: 0;
+            }
+            @include mq("mobile") {
+              .block-info {
+                opacity: 1;
+              }
+              img {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.my-work-content {
+  @include mq("mobile") {
+    padding: 5rem 0;
+  }
+  .content {
+    width: 1200px;
+    margin: 0 auto;
+    @include mq("tablet") {
+      width: 90%;
+      overflow: hidden;
+    }
+    @include mq("mobile") {
+      width: 80%;
+    }
+    &-title {
+      width: 100%;
+      margin-bottom: 5rem;
+      text-align: center;
+      h2 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
+        @include mq("mobile") {
+          font-size: 2.3rem;
+        }
+      }
+    }
+    &-list {
+      ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        @include mq("mobile") {
+          display: block;
+        }
+        li {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 250px;
+            transition: all 0.3s ease-in;
+            @include mq("mobile") {
+              width: 200px;
+            }
+          }
+          @include mq("tablet") {
+            width: 47%;
+            margin: 0;
+          }
+          @include mq("mobile") {
+            width: 100%;
+            margin: 0 0 10rem 0;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes hello {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

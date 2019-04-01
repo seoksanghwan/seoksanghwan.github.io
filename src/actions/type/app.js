@@ -1,0 +1,1 @@
+export const IE_CHECKER_EVENT = "IE_CHECKER_EVENT";

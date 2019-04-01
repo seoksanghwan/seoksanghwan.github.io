@@ -15,5 +15,6 @@ yarn start
 
 - ES2015
 - React
+- React-Hooks
 - Redux
 - React Router
