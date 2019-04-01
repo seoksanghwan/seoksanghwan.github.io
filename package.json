@@ -28,9 +28,11 @@
     "sass-loader": "7.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "NODE_ENV=development react-scripts start",
+    "build": "react-scripts build && cp build/index.html build/404.html",
+    "test": "react-scripts test --watch --coverage --env=node",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "test:deploy": "react-scripts test --coverage --env=node",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
