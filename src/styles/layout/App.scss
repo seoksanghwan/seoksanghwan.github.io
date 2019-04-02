@@ -104,19 +104,19 @@
     margin: 5rem auto 0 auto;
   }
   .content {
-    padding: 10rem 0;
+    padding: 10rem 0 0 0;
     @include mq("mobile") {
       padding: 5rem 0;
     }
     .introduce-myself {
       text-align: center;
-      width: 45%;
+      width: 1200px;
       margin: 0 auto;
       @include mq("tablet") {
-        width: 70%;
+        width: 90%;
       }
       @include mq("mobile") {
-        width: 75%;
+        width: 90%;
       }
       h2 {
         color: #fff;
@@ -137,15 +137,22 @@
           font-size: 2.3rem;
           line-height: 4rem;
         }
+        word-break: keep-all;
       }
       p {
+        width: 60%;
+        margin: 0 auto;
         color: #fff;
         font-size: 2.5rem;
         line-height: 3.7rem;
+        @include mq("tablet") {
+          width: 70%;
+        }
         @include mq("mobile") {
           font-size: 1.9rem;
+          width: 95%;
         }
-        word-break: break-word;
+        word-break: keep-all;
       }
     }
     .career-spack {
@@ -164,7 +171,7 @@
         width: 90%;
       }
       @include mq("mobile") {
-        width: 80%;
+        width: 90%;
         display: block;
       }
       dl.my-part {
@@ -195,6 +202,10 @@
           p {
             font-size: 3rem;
             font-weight: 500;
+            word-break: keep-all;
+            @include mq("mobile") {
+              font-size: 2.5rem;
+            }
           }
           margin-bottom: 3.5rem;
         }
@@ -202,24 +213,47 @@
           font-size: 2.2rem;
           font-weight: 200;
           line-height: 3.7rem;
+          word-break: keep-all;
           @include mq("tablet") {
+            font-size: 2rem;
+            line-height: 3.3rem;
+          }
+          @include mq("mobile") {
             font-size: 1.9rem;
+            line-height: 3rem;
           }
           h3 {
             color: #25c0f0;
             margin-bottom: 1.8rem;
+            @include mq("mobile") {
+              margin-bottom: 1.3rem;
+            }
           }
           p {
             font-size: 2.2rem;
             @include mq("tablet") {
               font-size: 1.9rem;
             }
+            @include mq("mobile") {
+              font-size: 1.9rem;
+            }
           }
           ul {
             margin-top: 1.8rem;
+            @include mq("mobile") {
+              margin-top: 1.1rem;
+            }
             li {
               font-size: 2.2rem;
               margin-bottom: 1.4rem;
+              @include mq("tablet") {
+                font-size: 2rem;
+                line-height: 3.3rem;
+              }
+              @include mq("mobile") {
+                font-size: 1.9rem;
+                line-height: 2rem;
+              }
             }
           }
           margin-bottom: 4rem;
@@ -247,6 +281,9 @@
     &-title {
       width: 100%;
       margin-bottom: 5rem;
+      @include mq("mobile") {
+        margin-bottom: 3rem;
+      }
       text-align: center;
       h2 {
         font-size: 4.5rem;
@@ -258,6 +295,7 @@
       p {
         font-size: 2.5rem;
         line-height: 3.7rem;
+        word-break: keep-all;
         a {
           color: #25c0f0;
           font-weight: bold;
@@ -265,6 +303,7 @@
         }
         @include mq("mobile") {
           font-size: 1.9rem;
+          line-height: 3rem;
         }
       }
     }
@@ -401,7 +440,7 @@
       margin-bottom: 5rem;
       text-align: center;
       h2 {
-        font-size: 4rem;
+        font-size: 3.8rem;
         margin-bottom: 2rem;
         font-weight: bold;
         @include mq("mobile") {
@@ -425,19 +464,25 @@
           justify-content: center;
           align-items: center;
           img {
-            width: 250px;
+            width: 240px;
             transition: all 0.3s ease-in;
-            @include mq("mobile") {
+            @include mq("tablet") {
               width: 200px;
+            }
+            @include mq("mobile") {
+              width: 150px;
             }
           }
           @include mq("tablet") {
             width: 47%;
-            margin: 0;
+            margin: 0 0 5rem 0;
+            &:last-child{
+              margin-bottom: 0;
+            }
           }
           @include mq("mobile") {
             width: 100%;
-            margin: 0 0 10rem 0;
+            margin: 0 0 7rem 0;
             &:last-child {
               margin-bottom: 0;
             }
