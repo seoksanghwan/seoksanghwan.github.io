@@ -1,9 +1,11 @@
 import {
-	IE_CHECKER_EVENT
+	IE_CHECKER_EVENT,
+	CLOSE_POP_UP
 } from "../../actions/type/app";
 
 export const initialState = {
-	ieChecker: true
+	ieChecker: true,
+	noneStyle: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -13,6 +15,12 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				ieChecker: action.ieChecker
+			}
+
+		case CLOSE_POP_UP:
+			return {
+				...state,
+				noneStyle: action.noneStyle
 			}
 
 		default:

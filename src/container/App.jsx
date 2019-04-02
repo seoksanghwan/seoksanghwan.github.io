@@ -3,16 +3,18 @@ import { bindActionCreators } from 'redux';
 import axios from 'axios';
 import {
   ieCheckerEvent,
-  naviFocusMove
+  closePopUp
 } from '../actions/app';
 import { App } from "../components/App/App";
 
 const mapStateToProps = state => {
   const {
-    ieChecker
+    ieChecker,
+    noneStyle
   } = state.app;
   return {
-    ieChecker
+    ieChecker,
+    noneStyle
   }
 };
 
@@ -43,6 +45,9 @@ const mapDispatchToProps = (dispatch) => {
       else {
         dispatch(ieCheckerEvent(false));
       }
+    },
+    closePopUpButtonEvnet: () => {
+      dispatch(closePopUp('none'));
     }
   };
 };

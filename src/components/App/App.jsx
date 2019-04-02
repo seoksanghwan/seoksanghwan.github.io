@@ -10,15 +10,22 @@ import logo from '../../images/logo.png';
 export const App = props => {
   props.ieCheckerBooleanEvent();
   const recent = useRef(null);
-  const { ieChecker } = props;
+  const { ieChecker, closePopUpButtonEvnet, noneStyle } = props;
   return (
     <>
-      {/* {!ieChecker && <NotSupport />} */}
+      {
+        !ieChecker && 
+          <NotSupport 
+            FontAwesomeIcon={FontAwesomeIcon} 
+            closePopUpButtonEvnet={closePopUpButtonEvnet}
+            noneStyle={noneStyle}
+          />
+        }
       <Navigation
         logo={logo}
         recent={recent}
       />
-      {/* <Switch>
+      <Switch>
         <Route exact to="/" render={props => {
           return (
             <Main
@@ -28,11 +35,11 @@ export const App = props => {
             />
           )
         }} />
-      </Switch> */}
-      {/* <Footer
+      </Switch>
+      <Footer
         FontAwesomeIcon={FontAwesomeIcon}
         logo={logo}
-      /> */}
+      />
     </>
   );
 }

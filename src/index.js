@@ -13,6 +13,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import './common.scss';
+import "@babel/polyfill";
 
 library.add(fas, far, fab);
 
@@ -31,12 +32,7 @@ const store = createStore(
 render(
   <Provider store={store}>
     <ConnectedRouter history={history} >
-      <Route exact to="/" render={props =>
-        <App
-          {...props}
-          history={history}
-        />
-      } />
+      <App history={history} />
     </ConnectedRouter>
   </Provider>,
   root

@@ -1,1 +1,2 @@
 export const IE_CHECKER_EVENT = "IE_CHECKER_EVENT";
+export const CLOSE_POP_UP = "CLOSE_POP_UP";
