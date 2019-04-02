@@ -13,7 +13,7 @@ export const App = props => {
   const { ieChecker } = props;
   return (
     <>
-      {!ieChecker && <NotSupport />}
+      {/* {!ieChecker && <NotSupport />} */}
       <Navigation
         logo={logo}
         recent={recent}
@@ -29,10 +29,10 @@ export const App = props => {
           )
         }} />
       </Switch> */}
-      <Footer
+      {/* <Footer
         FontAwesomeIcon={FontAwesomeIcon}
         logo={logo}
-      />
+      /> */}
     </>
   );
 }

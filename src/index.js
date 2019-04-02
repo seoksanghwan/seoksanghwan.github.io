@@ -31,7 +31,12 @@ const store = createStore(
 render(
   <Provider store={store}>
     <ConnectedRouter history={history} >
-      <App history={history} />
+      <Route exact to="/" render={props =>
+        <App
+          {...props}
+          history={history}
+        />
+      } />
     </ConnectedRouter>
   </Provider>,
   root
