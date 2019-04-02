@@ -17,7 +17,7 @@ import './common.scss';
 library.add(fas, far, fab);
 
 const root = document.getElementById('root');
-const history: History = createHistory()
+const history = createHistory();
 const store = createStore(
   connectRouter(history)(reducer),
   compose(
@@ -31,12 +31,7 @@ const store = createStore(
 render(
   <Provider store={store}>
     <ConnectedRouter history={history} >
-      <Route render={props =>
-        <App
-          {...props}
-          history={history}
-        />
-      } />
+      <App history={history} />
     </ConnectedRouter>
   </Provider>,
   root

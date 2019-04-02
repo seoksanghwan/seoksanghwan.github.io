@@ -18,7 +18,7 @@ export const App = props => {
         logo={logo}
         recent={recent}
       />
-      <Switch>
+      {/* <Switch>
         <Route exact to="/" render={props => {
           return (
             <Main
@@ -28,7 +28,7 @@ export const App = props => {
             />
           )
         }} />
-      </Switch>
+      </Switch> */}
       <Footer
         FontAwesomeIcon={FontAwesomeIcon}
         logo={logo}
