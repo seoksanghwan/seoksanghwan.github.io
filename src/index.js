@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import React from 'react';
 import { render } from 'react-dom';
 import { Route } from 'react-router-dom';
@@ -13,7 +14,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import './common.scss';
-import "@babel/polyfill";
 
 library.add(fas, far, fab);
 
