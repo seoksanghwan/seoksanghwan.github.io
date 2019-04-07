@@ -1,3 +1,7 @@
+import 'react-app-polyfill/ie9';
+import 'core-js/es/array/find';
+import 'core-js/es/array/includes';
+import 'core-js/es/number/is-nan';
 import "@babel/polyfill";
 import React from 'react';
 import { render } from 'react-dom';

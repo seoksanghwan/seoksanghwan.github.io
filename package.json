@@ -11,11 +11,13 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.18.0",
     "connected-react-router": "^4.5.0",
+    "core-js": "^3.0.1",
     "history": "^4.9.0",
     "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
     "raf": "^3.4.1",
     "react": "^16.7.0",
+    "react-app-polyfill": "^0.2.2",
     "react-dom": "^16.8.3",
     "react-fusioncharts": "^3.0.0",
     "react-grid-layout": "^0.16.6",
@@ -30,9 +32,11 @@
     "sass-loader": "7.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "NODE_ENV=development react-scripts start",
+    "build": "react-scripts build && cp build/index.html build/404.html",
+    "test": "react-scripts test --watch --coverage --env=node",
+    "test:debug": "react-scripts --inspect-brk test --runInBand",
+    "test:deploy": "react-scripts test --coverage --env=node",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,9 +45,12 @@
   "browserslist": [
     ">0.2%",
     "not dead",
+    "not ie <= 11",
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "jsdom": "13.0.0",
