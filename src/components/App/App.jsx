@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Navigation } from '../Navigation/Navigation';
 import { Main } from '../Main/Main';
@@ -14,28 +14,31 @@ export const App = props => {
   return (
     <>
       {
-        !ieChecker && 
-          <NotSupport 
-            FontAwesomeIcon={FontAwesomeIcon} 
-            closePopUpButtonEvnet={closePopUpButtonEvnet}
-            noneStyle={noneStyle}
-          />
-        }
+        !ieChecker &&
+        <NotSupport
+          FontAwesomeIcon={FontAwesomeIcon}
+          closePopUpButtonEvnet={closePopUpButtonEvnet}
+          noneStyle={noneStyle}
+        />
+      }
       <Navigation
         logo={logo}
         recent={recent}
       />
-      <Switch>
-        <Route exact to="/" render={props => {
-          return (
-            <Main
-              {...props}
-              FontAwesomeIcon={FontAwesomeIcon}
-              recent={recent}
-            />
-          )
-        }} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={props => {
+            return (
+              <Main
+                {...props}
+                FontAwesomeIcon={FontAwesomeIcon}
+                recent={recent}
+              />
+            )
+          }} />
+          <Route render={() => <Redirect to="/" />} />
+        </Switch>
+      </Router>
       <Footer
         FontAwesomeIcon={FontAwesomeIcon}
         logo={logo}

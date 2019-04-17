@@ -6,6 +6,8 @@ import {
   closePopUp
 } from '../actions/app';
 import { App } from "../components/App/App";
+import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = state => {
   const {
@@ -52,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps, null, { withref: true })(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps, null, { withref: true })(App));
