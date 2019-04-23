@@ -85,6 +85,8 @@ export const Main = props => {
                   <li>VScode</li>
                   <li>Slack</li>
                   <li>Robo3T</li>
+                  <li>Netlify</li>
+                  <li>AWS</li>
                 </ul>
               </dd>
             </dl>
