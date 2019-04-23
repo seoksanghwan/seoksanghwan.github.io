@@ -32,9 +32,9 @@ export const Main = props => {
       <section className="career-container">
         <div className="content">
           <div className="introduce-myself">
-            <h2>안녕하세요.<em></em>프론트엔드 개발자 석상환이라고 합니다. 만나서 반갑습니다.<span>👋</span></h2>
+            <h2>안녕하세요.<em></em>프론트엔드 개발자 석상환이라고 합니다. 만나서 반갑습니다.</h2>
             <p>
-              거의 4~5년간 HTML, CSS, JAVASCRIPT... 를 사용하며,
+              HTML, CSS, JAVASCRIPT... 를 사용하며,
               늘 발전하고 좀 더 좋은 코드를 작성하기 위해, 늘 공부하고, 배워가면서
               좀 더 좋은 코드를 작성하고 싶어 하는 개발자입니다.
             </p>
@@ -46,12 +46,11 @@ export const Main = props => {
                 <p>Web Publisher</p>
               </dt>
               <dd>
-                처음 시작을 퍼블리셔로 했습니다.<br />
-                좀 더 발전하고 싶어 프론트엔드로 전향하였습니다.
+                처음 시작을 퍼블리셔로 했습니다.
               </dd>
               <dd>
                 <h3>사용하는 언어</h3>
-                <p>HTML, CSS, Jquery</p>
+                <p>HTML, CSS, Javascript, Jquery</p>
               </dd>
               <dd>
                 <h3>사용하는 도구</h3>
@@ -59,6 +58,7 @@ export const Main = props => {
                   <li>Jira</li>
                   <li>Sublime</li>
                   <li>Slack</li>
+                  <li>FileZilla</li>
                 </ul>
               </dd>
             </dl>
@@ -69,7 +69,8 @@ export const Main = props => {
               </dt>
               <dd>
                 프론트엔드 개발자를 시작한 이유는, 제가 친 코드가<br />
-                현실로 나타나는 것을 즐기고, 또 좋아하기 때문입니다.
+                현실로 나타나는 것을 즐기고, 또 좋아하기 때문입니다.<br />
+                또 한 유저가 사용하는 모습의 보람을 느낍니다.
               </dd>
               <dd>
                 <h3>사용하는 언어</h3>
@@ -83,6 +84,7 @@ export const Main = props => {
                   <li>Terminal</li>
                   <li>VScode</li>
                   <li>Slack</li>
+                  <li>Robo3T</li>
                 </ul>
               </dd>
             </dl>
