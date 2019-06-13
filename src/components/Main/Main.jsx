@@ -1,13 +1,5 @@
 import React from 'react';
-import me from '../../images/me.png';
-import realme from '../../images/realme.png';
-import code from '../../images/code.png';
-import html from '../../images/html.png';
-import project01 from '../../images/project01.png';
-import project02 from '../../images/project02.png';
-import b_logo_01 from '../../images/b_logo_01.png';
-import b_logo_02 from '../../images/b_logo_02.png';
-import b_logo_03 from '../../images/b_logo_03.png';
+import {mainImage} from './images';
 
 export const Main = props => {
   const FontAwesomeIcon = props.FontAwesomeIcon;
@@ -23,8 +15,8 @@ export const Main = props => {
               </p>
             </div>
             <div className="circle">
-              <img src={me} alt="seoksanghwan" className="img-me" draggable="false" />
-              <img src={realme} alt="seoksanghwan" className="real-me" draggable="false" />
+              <img src={mainImage.me} alt="seoksanghwan" className="img-me" draggable="false" />
+              <img src={mainImage.realme} alt="seoksanghwan" className="real-me" draggable="false" />
             </div>
           </div>
         </div>
@@ -42,7 +34,7 @@ export const Main = props => {
           <div className="career-spack">
             <dl className="my-part">
               <dt>
-                <img src={html} alt="html" className="html" />
+                <img src={mainImage.html} alt="html" className="html" />
                 <p>Web Publisher</p>
               </dt>
               <dd>
@@ -64,7 +56,7 @@ export const Main = props => {
             </dl>
             <dl className="my-part">
               <dt>
-                <img src={code} alt="code" className="code" />
+                <img src={mainImage.code} alt="code" className="code" />
                 <p>Front-end Developer</p>
               </dt>
               <dd>
@@ -109,14 +101,22 @@ export const Main = props => {
                   <p>그룹 화상채팅을 할 수 있는<br />웹서비스입니다.</p>
                   <a href="https://www.videos-conf.com/" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
-                <img src={project01} alt="project01" draggable="false" />
+                <img src={mainImage.project01} alt="project01" draggable="false" />
               </li>
               <li>
                 <div className="block-info">
                   <p>비트코인 마진 거래소<br />웹서비스입니다.</p>
-                  <a href="https://www.youtube.com/watch?v=Y0NS99Dzczc&feature=youtu.be" target="_blank">유튜브 영상보기{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                  <a href="http://www.wbcmex.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                  {/* <a href="https://www.youtube.com/watch?v=Y0NS99Dzczc&feature=youtu.be" target="_blank">유튜브 영상보기{<FontAwesomeIcon icon="external-link-alt" />}</a> */}
                 </div>
-                <img src={project02} alt="project02" draggable="false" />
+                <img src={mainImage.project02} alt="project02" draggable="false" />
+              </li>
+              <li>
+                <div className="block-info">
+                  <p>AIbot 대쉬보드<br />웹섭비스입니다. </p>
+                  <a href="http://aipebot.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                </div>
+                <img src={mainImage.project03} alt="project02" draggable="false" />
               </li>
             </ul>
           </div>
@@ -129,9 +129,9 @@ export const Main = props => {
           </div>
           <div className="content-list">
             <ul>
-              <li><img src={b_logo_01} alt=""/></li>
-              <li><img src={b_logo_03} alt=""/></li>
-              <li><img src={b_logo_02} alt=""/></li>
+              <li><img src={mainImage.b_logo_01} alt=""/></li>
+              <li><img src={mainImage.b_logo_03} alt=""/></li>
+              <li><img src={mainImage.b_logo_02} alt=""/></li>
             </ul>
           </div>
         </div>
