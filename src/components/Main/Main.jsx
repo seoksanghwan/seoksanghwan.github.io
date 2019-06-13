@@ -107,13 +107,13 @@ export const Main = props => {
                 <div className="block-info">
                   <p>비트코인 마진 거래소<br />웹서비스입니다.</p>
                   <a href="http://www.wbcmex.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
-                  {/* <a href="https://www.youtube.com/watch?v=Y0NS99Dzczc&feature=youtu.be" target="_blank">유튜브 영상보기{<FontAwesomeIcon icon="external-link-alt" />}</a> */}
+                  <a href="https://www.youtube.com/watch?v=Y0NS99Dzczc&feature=youtu.be" target="_blank">유튜브 영상보기{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
                 <img src={mainImage.project02} alt="project02" draggable="false" />
               </li>
               <li>
                 <div className="block-info">
-                  <p>AIbot 대쉬보드<br />웹섭비스입니다. </p>
+                  <p>AIbot 대쉬보드<br />웹서비스입니다. </p>
                   <a href="http://aipebot.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
                 <img src={mainImage.project03} alt="project02" draggable="false" />
