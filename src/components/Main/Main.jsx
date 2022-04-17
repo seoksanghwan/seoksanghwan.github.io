@@ -16,7 +16,7 @@ export const Main = props => {
             </div>
             <div className="circle">
               <img src={mainImage.me} alt="seoksanghwan" className="img-me" draggable="false" />
-              <img src="https://raw.githubusercontent.com/seoksanghwan/resume-seoksanghwan/master/%E1%84%89%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A1%E1%86%BC%E1%84%92%E1%85%AA%E1%86%AB.png" alt="seoksanghwan" className="real-me" draggable="false" />
+              <img src={mainImage.realme} alt="seoksanghwan" className="real-me" draggable="false" />
             </div>
           </div>
         </div>
