@@ -15,8 +15,8 @@ export const Main = props => {
               </p>
             </div>
             <div className="circle">
-              <img src={mainImage.me} alt="seoksanghwan" className="img-me" draggable="false" />
-              <img src={mainImage.realme} alt="seoksanghwan" className="real-me" draggable="false" />
+              <img src={mainImage.me} alt="seoksanghwan_Memoji" className="img-me" draggable="false" />
+              <img src={mainImage.realme} alt="seoksanghwan_real" className="real-me" draggable="false" />
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ export const Main = props => {
                 처음 시작을 퍼블리셔로 했습니다.
               </dd>
               <dd>
-                <h3>사용하는 언어</h3>
+                <h3>보유 기술</h3>
                 <p>HTML, CSS, Javascript, Jquery</p>
               </dd>
               <dd>
@@ -65,18 +65,20 @@ export const Main = props => {
                 또 한 유저가 사용하는 모습의 보람을 느낍니다.
               </dd>
               <dd>
-                <h3>사용하는 언어</h3>
-                <p>HTML, CSS, SCSS, Javascript, React, Redux, NodeJs</p>
+                <h3>보유 기술</h3>
+                <p>HTML, CSS, SCSS, Javascript, React, Next.js<br/>Redux, Mobx, NodeJs, styled-components</p>
               </dd>
               <dd>
                 <h3>사용하는 도구</h3>
                 <ul>
-                  <li>Bitbucket</li>
+                  <li>Sourcetree</li>
                   <li>Github</li>
                   <li>Terminal</li>
                   <li>VScode</li>
                   <li>Slack</li>
-                  <li>Robo3T</li>
+                  <li>Jira</li>
+                  <li>Zeplin</li>
+                  <li>Figma</li>
                   <li>Netlify</li>
                   <li>AWS</li>
                 </ul>
@@ -98,6 +100,13 @@ export const Main = props => {
             <ul>
               <li>
                 <div className="block-info">
+                  <p>마블러스다자이너 <br />웹 서비스(라이선스, 스토어 판매, 커뮤니티) 입니다.</p>
+                  <a href="https://marvelousdesigner.com/" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                </div>
+                <img src={mainImage.project04} alt="project01" draggable="false" />
+              </li>
+              <li>
+                <div className="block-info">
                   <p>그룹 화상채팅을 할 수 있는<br />웹서비스입니다.</p>
                   <a href="https://www.videos-conf.com/" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
@@ -106,7 +115,7 @@ export const Main = props => {
               <li>
                 <div className="block-info">
                   <p>비트코인 마진 거래소<br />웹서비스입니다.</p>
-                  <a href="http://www.wbcmex.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                  {/* <a href="http://www.wbcmex.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a> */}
                   <a href="https://www.youtube.com/watch?v=Y0NS99Dzczc&feature=youtu.be" target="_blank">유튜브 영상보기{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
                 <img src={mainImage.project02} alt="project02" draggable="false" />
@@ -114,7 +123,7 @@ export const Main = props => {
               <li>
                 <div className="block-info">
                   <p>AIbot 대쉬보드<br />웹서비스입니다. </p>
-                  <a href="http://aipebot.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
+                  {/* <a href="http://aipebot.com" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a> */}
                 </div>
                 <img src={mainImage.project03} alt="project02" draggable="false" />
               </li>
@@ -129,9 +138,10 @@ export const Main = props => {
           </div>
           <div className="content-list">
             <ul>
-              <li><img src={mainImage.b_logo_01} alt=""/></li>
-              <li><img src={mainImage.b_logo_03} alt=""/></li>
-              <li><img src={mainImage.b_logo_02} alt=""/></li>
+              <li><img src={mainImage.b_logo_04} alt="클로버추얼패션_마블러스디자이너"/></li>
+              <li><img src={mainImage.b_logo_01} alt="뉴럴비씨"/></li>
+              <li><img src={mainImage.b_logo_03} alt="아이파트너즈"/></li>
+              <li><img src={mainImage.b_logo_02} alt="조인스엠"/></li>
             </ul>
           </div>
         </div>

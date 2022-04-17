@@ -75,7 +75,7 @@
           transition: all 0.4s ease-in-out;
 
           &.real-me {
-            width: 320px;
+            width: 220px;
             transform: translate(-50%, -44%) scale(1.1);
             opacity: 0;
 
@@ -101,7 +101,7 @@
             width: 170px;
 
             &.real-me {
-              width: 270px;
+              width: 175px;
             }
           }
         }
@@ -398,6 +398,7 @@
           width: 380px;
           height: 224px;
           margin-right: 20px;
+          margin-bottom: 20px;
           border-radius: 10px;
           position: relative;
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);

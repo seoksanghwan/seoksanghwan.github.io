@@ -1,6 +1,4 @@
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
-import axios from 'axios';
 import {
   ieCheckerEvent,
   closePopUp

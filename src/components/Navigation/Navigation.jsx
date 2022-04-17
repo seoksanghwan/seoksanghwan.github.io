@@ -35,7 +35,8 @@ export const Navigation = ({ recent, logo }) => {
           <div className="nav-menu">
             <ul>
               <li onClick={ () => naviFocusMoveEvent(recent,500)}>Front-End Project</li>
-              <li><a href="http://seokweb.com/portfolio/" target="_blank">Publisher Project</a></li>
+              <li><a href="https://github.com/seoksanghwan/prev-Project-List" target="_blank">Publisher Project</a></li>
+              {/* <li><a href="http://seokweb.com/portfolio/" target="_blank">Publisher Project</a></li> */}
             </ul>
           </div>
         </div>
