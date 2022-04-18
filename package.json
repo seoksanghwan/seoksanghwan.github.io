@@ -18,7 +18,7 @@
     "customize-cra": "~1.0.0",
     "ez.js": "^1.0.3",
     "html-react-parser": "^1.4.9",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.0",
     "prop-types": "~15.8.1",
     "qs": "~6.10.3",
     "react": "~16.14.0",
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "build": "react-scripts build",
+    "build": "CI= react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
