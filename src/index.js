@@ -4,7 +4,6 @@ import 'core-js/es/array/includes';
 import 'core-js/es/number/is-nan';
 import React from 'react';
 import { render } from 'react-dom';
-import { Route } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { connectRouter, routerMiddleware, ConnectedRouter } from 'connected-react-router';
