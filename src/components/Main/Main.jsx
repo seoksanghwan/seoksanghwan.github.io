@@ -93,14 +93,14 @@ export const Main = props => {
             <h2>My Recent Work</h2>
             <p>
               최근 작업했던, 작업물들입니다. <br />
-              퍼블리셔로 작업 했던 리스트를 보실려면, <a href="http://seokweb.com/portfolio/" target="_blank">여기</a>를 클릭해주세요.
+              퍼블리셔로 작업 했던 리스트를 보실려면, <a href="http://seokweb.dothome.co.kr/portfolio/" target="_blank">여기</a>를 클릭해주세요.
             </p>
           </div>
           <div className="content-list">
             <ul>
               <li>
                 <div className="block-info">
-                  <p>마블러스다자이너 <br />웹 서비스(라이선스, 스토어 판매, 커뮤니티) 입니다.</p>
+                  <p>마블러스다자이너 <br />웹 서비스 입니다.</p>
                   <a href="https://marvelousdesigner.com/" target="_blank">웹사이트 방문{<FontAwesomeIcon icon="external-link-alt" />}</a>
                 </div>
                 <img src={mainImage.project04} alt="project01" draggable="false" />
