@@ -1,12 +1,8 @@
-@import './styles/abstracts/mixins';
-@import './styles/abstracts/variables';
-
-@import './styles/base/base';
-
-@import './styles/layout/header';
-@import './styles/layout/App';
-@import './styles/layout/footer';
-@import './styles/layout/NotSupport';
+@use './styles/base/base';
+@use './styles/layout/header';
+@use './styles/layout/App';
+@use './styles/layout/footer';
+@use './styles/layout/NotSupport';
 
 .wrap {
   width: 100%;
