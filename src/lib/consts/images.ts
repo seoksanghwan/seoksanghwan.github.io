@@ -6,6 +6,7 @@ import project02 from '../../images/project02.png';
 import project03 from '../../images/project03.png';
 import project04 from '../../images/project04.png';
 import project05 from '../../images/project05.png';
+import project06 from '../../images/project06.png';
 import b_logo_01 from '../../images/b_logo_01.png';
 import b_logo_02 from '../../images/b_logo_02.png';
 import b_logo_03 from '../../images/b_logo_03.png';
@@ -19,6 +20,8 @@ export const mainImage = {
   project02,
   project03,
   project04,
+  project05,
+  project06,
   b_logo_01,
   b_logo_02,
   b_logo_03,
@@ -26,6 +29,13 @@ export const mainImage = {
 };
 
 export const projectList = [
+  {
+    description: '포트폴리오 \n 사이트입니다. 간단한 이력서와 프로젝트리스트를 보여줍니다.',
+    link: '',
+    linkText: '',
+    src: project06,
+    alt: 'project06',
+  },
   {
     description: '마블러스디자이너 \n 디자인 시스템 스토리북입니다.',
     link: '',
