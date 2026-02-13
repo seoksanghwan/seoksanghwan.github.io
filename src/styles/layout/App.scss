@@ -1,200 +1,27 @@
-/* src/styles/layout/App.scss 맨 윗줄 */
-@use '../abstracts/variables' as *;
+/* src/styles/layout/App.scss */
 @use '../abstracts/mixins' as *;
-
-.main-container {
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  max-height: 100%;
-  margin: 10rem auto 0 auto;
-
-  @include mq('mobile') {
-    margin: 5rem auto 0 auto;
-  }
-
-  .content {
-    .about-me {
-      .info-text {
-        text-align: center;
-
-        p {
-          font-size: 6rem;
-          font-weight: 500;
-
-          small {
-            font-size: 3rem;
-            font-weight: 200;
-
-            @include mq('mobile') {
-              font-size: 2rem;
-
-              em {
-                display: block;
-              }
-            }
-          }
-
-          @include mq('mobile') {
-            font-size: 3rem;
-          }
-        }
-      }
-
-      .circle {
-        margin: 3rem auto;
-        overflow: hidden;
-        width: 300px;
-        height: 300px;
-        border-radius: 100%;
-        background: linear-gradient(#25c0f0, #2fecec);
-        position: relative;
-
-        &:hover {
-          .img-me {
-            opacity: 0;
-          }
-
-          .real-me {
-            opacity: 1;
-          }
-
-          @include mq('mobile') {
-            .img-me {
-              opacity: 0;
-            }
-
-            .real-me {
-              opacity: 1;
-            }
-          }
-        }
-
-        img {
-          width: 220px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(1.1);
-          transition: all 0.4s ease-in-out;
-
-          &.real-me {
-            width: 220px;
-            transform: translate(-50%, -44%) scale(1.1);
-            opacity: 0;
-
-            @include mq('mobile') {
-              opacity: 1;
-            }
-          }
-
-          &.img-me {
-            opacity: 1;
-
-            @include mq('mobile') {
-              opacity: 0;
-            }
-          }
-        }
-
-        @include mq('mobile') {
-          width: 250px;
-          height: 250px;
-
-          img {
-            width: 170px;
-
-            &.real-me {
-              width: 175px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 
 .career-container {
   height: auto;
-  min-height: 100%;
+  min-height: calc(100dvh - 131px);
   max-height: 100%;
-  margin: 10rem auto 0 auto;
-  background: linear-gradient(#25c0f0 60%, #fff 40%);
+  max-width: 1200px;
+  margin: 0 auto;
 
   @include mq('mobile') {
     margin: 5rem auto 0 auto;
   }
 
-  .content {
-    padding: 10rem 0 0 0;
+  .career-content {
+    padding: 20px;
 
     @include mq('mobile') {
       padding: 5rem 0;
     }
 
-    .introduce-myself {
-      text-align: center;
-      width: 1200px;
-      margin: 0 auto;
-
-      @include mq('tablet') {
-        width: 90%;
-      }
-
-      @include mq('mobile') {
-        width: 90%;
-      }
-
-      h2 {
-        color: #fff;
-        font-size: 4.5rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
-
-        span {
-          display: inline-block;
-          transform: rotate(0deg);
-          animation: hello 1s infinite linear;
-          color: rgb(255, 187, 0);
-        }
-
-        em {
-          display: block;
-        }
-
-        line-height: 6rem;
-
-        @include mq('mobile') {
-          font-size: 2.3rem;
-          line-height: 4rem;
-        }
-
-        word-break: keep-all;
-      }
-
-      p {
-        width: 60%;
-        margin: 0 auto;
-        color: #fff;
-        font-size: 2.5rem;
-        line-height: 3.7rem;
-
-        @include mq('tablet') {
-          width: 70%;
-        }
-
-        @include mq('mobile') {
-          font-size: 1.9rem;
-          width: 95%;
-        }
-
-        word-break: keep-all;
-      }
-    }
-
     .career-spack {
-      width: 1200px;
-      margin: 6rem auto 0 auto;
+      margin: 0 auto;
+      padding: 5rem;
 
       @include mq('mobile') {
         margin: 3rem auto 0 auto;
@@ -202,125 +29,251 @@
 
       border-radius: 50px;
       background: #fff;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-      border: 1px solid #dddddd;
+      border: 1px solid #d3d3d3;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-
-      @include mq('tablet') {
-        width: 90%;
-      }
-
+      gap: 40px;
       @include mq('mobile') {
-        width: 90%;
-        display: block;
+        row-gap: 32px;
       }
 
-      dl.my-part {
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        padding: 5rem 0;
-        overflow: hidden;
+      .introduce {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d3d3d3;
 
-        @include mq('tablet') {
-          padding: 5rem 2rem;
+        .profileImage {
+          flex-shrink: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          width: 150px;
+          height: 150px;
+          max-width: 150px;
+          flex-basis: 150px;
+          border-radius: 50%;
+          background-image: url('../../images/realme.png');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          position: relative;
         }
-
-        @include mq('mobile') {
-          padding: 5rem 2rem;
-          border-bottom: 1px solid #dfdfdf;
-
-          &:last-child {
-            border: none;
-            border-left: none !important;
-          }
-        }
-
-        &:last-child {
-          border-left: 1px solid #dfdfdf;
-        }
-
-        dt {
-          img {
-            height: 50px;
-            margin-bottom: 5rem;
-          }
-
-          p {
-            font-size: 3rem;
-            font-weight: 500;
-            word-break: keep-all;
-
-            @include mq('mobile') {
-              font-size: 2.5rem;
-            }
-          }
-
-          margin-bottom: 3.5rem;
-        }
-
-        dd {
-          font-size: 2.2rem;
-          font-weight: 200;
-          line-height: 3.7rem;
-          word-break: keep-all;
-
-          @include mq('tablet') {
-            font-size: 2rem;
-            line-height: 3.3rem;
-          }
-
-          @include mq('mobile') {
-            font-size: 1.9rem;
-            line-height: 3rem;
-          }
-
+        .introduce-myself {
+          width: 100%;
+          display: flex;
+          gap: 40px;
+          align-items: center;
+          // flex-direction: column;
           h3 {
-            color: #25c0f0;
-            margin-bottom: 1.8rem;
-
-            @include mq('mobile') {
-              margin-bottom: 1.3rem;
-            }
+            font-size: 3rem;
           }
-
-          p {
-            font-size: 2.2rem;
-
-            @include mq('tablet') {
-              font-size: 1.9rem;
-            }
-
-            @include mq('mobile') {
-              font-size: 1.9rem;
-            }
+          h2 {
+            font-size: 4rem;
+            font-weight: bold;
           }
-
           ul {
-            margin-top: 1.8rem;
-
-            @include mq('mobile') {
-              margin-top: 1.1rem;
-            }
-
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             li {
-              font-size: 2.2rem;
-              margin-bottom: 1.4rem;
-
-              @include mq('tablet') {
-                font-size: 2rem;
-                line-height: 3.3rem;
+              &:hover {
+                text-decoration: underline;
               }
+              a {
+                display: flex;
+                align-items: center;
+                font-size: 1.7rem;
+                gap: 4px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
 
-              @include mq('mobile') {
-                font-size: 1.9rem;
-                line-height: 2rem;
+      .about-section {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        column-gap: 40px;
+        @include mq('mobile') {
+          grid-template-columns: 1fr;
+          row-gap: 32px;
+        }
+
+        .title {
+          flex-shrink: 0;
+          white-space: nowrap;
+          h4 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0;
+          }
+        }
+
+        .content {
+          word-break: keep-all;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          &.is-career {
+            gap: 30px;
+          }
+          p {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 2rem;
+            line-height: 1.6;
+            color: #18181c;
+            margin: 0;
+          }
+
+          .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .skill-group {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+              .skill-title {
+                font-size: 1.7rem;
+                color: #18181c;
+                font-weight: 500;
+              }
+              .skill-chips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                .chip {
+                  border: 1px solid #18181c;
+                  font-size: 1.5rem;
+                  padding: 5px 10px;
+                  border-radius: 10px;
+                  color: #18181c;
+                  font-weight: 500;
+                  transition: all 0.2s ease-in;
+                  cursor: pointer;
+                  &:hover {
+                    background-color: #18181c;
+                    color: #fff;
+                  }
+                }
               }
             }
           }
 
-          margin-bottom: 4rem;
+          .career-section {
+            position: relative;
+            dl {
+              dt {
+                position: absolute;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+                width: 1px;
+                height: 1px;
+                clip: rect(1px, 1px, 1px, 1px);
+                white-space: nowrap;
+              }
+            }
+
+            .career-warp {
+              display: flex;
+              flex-direction: column;
+              gap: 1.5rem;
+
+              // 회사명 및 상단 정보
+              .company-name {
+                display: flex;
+                flex-direction: column;
+                dd {
+                  font-size: 2.4rem;
+                  font-weight: 700;
+                  color: #111;
+                  margin: 0;
+                }
+              }
+
+              // 근무 기간
+              .period {
+                dd {
+                  font-size: 1.5rem;
+                  color: #555;
+                  margin: 0;
+                  font-weight: 400;
+                  span {
+                    color: #00c471; // '재직 중' 포인트 컬러
+                    font-weight: 600;
+                    margin-left: 0.5rem;
+                  }
+                }
+              }
+
+              // 상세 업무 리스트 (핵심)
+              .personal-history {
+                margin-top: 1rem;
+
+                .list {
+                  > ul {
+                    list-style: none;
+                    padding: 0;
+
+                    > li {
+                      margin-bottom: 1.5rem;
+
+                      // 서비스명 (주식 모으기 서비스 등)
+                      > p {
+                        font-size: 2rem;
+                        font-weight: 700;
+                        margin-bottom: 0.8rem;
+                        position: relative;
+                        padding-left: 1.2rem;
+
+                        &::before {
+                          content: '•';
+                          position: absolute;
+                          left: -0.5rem;
+                          color: #333;
+                        }
+                      }
+
+                      // 세부 성과 리스트
+                      ul {
+                        list-style: none;
+                        padding-left: 2.5rem;
+
+                        li {
+                          font-size: 2rem;
+                          line-height: 1.6;
+                          color: #444;
+                          margin-bottom: 0.5rem;
+                          font-weight: 400;
+                          position: relative;
+                          word-break: keep-all;
+
+                          &::before {
+                            content: '◦';
+                            position: absolute;
+                            left: -2rem;
+                            color: #888;
+                          }
+
+                          // 기술 스택 강조 (Next.js, SSR 등)
+                          strong {
+                            font-weight: 700;
+                            color: #000;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -328,6 +281,9 @@
 }
 
 .my-recent-content {
+  height: auto;
+  min-height: calc(100dvh - 131px);
+  max-height: 100%;
   padding: 10rem 0;
 
   @include mq('mobile') {
@@ -444,9 +400,14 @@
 
           .block-info {
             position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
             width: 100%;
             height: 100%;
-            background: rgba(16, 7, 58, 0.8);
+            background: #18181c;
             text-align: center;
             opacity: 0;
             transition: all 0.2s ease-in;
@@ -462,7 +423,6 @@
             p {
               color: #fff;
               font-size: 2.5rem;
-              margin: 4rem 0 1rem 0;
               line-height: 4rem;
 
               @include mq('mobile') {
@@ -474,7 +434,7 @@
             a {
               color: #fff;
               font-size: 2.3rem;
-              border: 2px solid #25c0f0;
+              border: 2px solid #ffffff;
               padding: 1rem 3rem;
               border-radius: 20px;
               display: flex;
@@ -522,107 +482,5 @@
         }
       }
     }
-  }
-}
-
-.my-work-content {
-  @include mq('mobile') {
-    padding: 5rem 0;
-  }
-
-  .content {
-    width: 1200px;
-    margin: 0 auto;
-
-    @include mq('tablet') {
-      width: 90%;
-      overflow: hidden;
-    }
-
-    @include mq('mobile') {
-      width: 80%;
-    }
-
-    &-title {
-      width: 100%;
-      margin-bottom: 5rem;
-      text-align: center;
-
-      h2 {
-        font-size: 3.8rem;
-        margin-bottom: 2rem;
-        font-weight: bold;
-
-        @include mq('mobile') {
-          font-size: 2.3rem;
-        }
-      }
-    }
-
-    &-list {
-      ul {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-
-        @include mq('mobile') {
-          display: block;
-        }
-
-        li {
-          position: relative;
-          overflow: hidden;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          img {
-            width: 240px;
-            transition: all 0.3s ease-in;
-
-            @include mq('tablet') {
-              width: 200px;
-            }
-
-            @include mq('mobile') {
-              width: 150px;
-            }
-          }
-
-          @include mq('tablet') {
-            width: 47%;
-            margin: 0 0 5rem 0;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-
-          @include mq('mobile') {
-            width: 100%;
-            margin: 0 0 7rem 0;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@keyframes hello {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(90deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
   }
 }
