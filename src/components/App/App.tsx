@@ -1,10 +1,11 @@
 import React, { useRef } from 'react'; // 1. useRef 추가
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Navigation } from '../Navigation/Navigation';
-import { Footer } from '../Footer/Footer';
-import { Main } from '../Main/Main';
-import { NotSupport } from '../NotSupport/NotSupport';
-import '../../styles/layout/App.scss';
+import { Navigation } from '../Navigation';
+import { Footer } from '../Footer';
+
+import { NotSupport } from '../NotSupport';
+import { Main } from '@/components/Main';
+import { ProjectList } from '@/components/ProjectList';
 
 interface AppProps {
   ieChecker: boolean;
@@ -28,6 +29,7 @@ export const App: React.FC<AppProps> = ({ ieChecker, noneStyle, closePopUpButton
       <Routes>
         {/* 4. Main에도 recent Ref를 전달하여 스크롤 도착 지점 설정 */}
         <Route path="/" element={<Main recent={recentSectionRef} />} />
+        <Route path="/project" element={<ProjectList recent={recentSectionRef} />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 

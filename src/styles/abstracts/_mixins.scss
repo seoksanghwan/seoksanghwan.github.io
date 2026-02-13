@@ -1,71 +1,11 @@
-@mixin mq( $screen ) {
-    @if $screen == "mobile" {
-        @media all and (min-width: 320px) and (max-width: 767px){
-            @content;
-        }
+@mixin mq($screen) {
+  @if $screen == 'mobile' {
+    @media all and (min-width: 320px) and (max-width: 767px) {
+      @content;
     }
-    @else if $screen == "tablet" {
-        @media all and (min-width: 768px) and (max-width: 1200px){
-            @content;
-        }
+  } @else if $screen == 'tablet' {
+    @media all and (min-width: 768px) and (max-width: 1200px) {
+      @content;
     }
+  }
 }
-
-@mixin scrollStyle {
-    &::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 4px rgba(22, 28, 46, 1) !important;
-        box-shadow: inset 0 0 4px rgba(22, 28, 46, 1) !important;
-        border-radius: 10px !important;
-        background-color: transparent !important;
-    }
-  
-    &::-webkit-scrollbar {
-        width: 2px !important;
-        height: 2px !important;
-        background-color: transparent !important;
-        -webkit-appearance: none;
-        background-color: transparent !important;
-    }
-  
-    &::-webkit-scrollbar-thumb {
-    border-radius: 10px !important;
-    -webkit-box-shadow: inset 0 0 4px rgba(22, 28, 46, 1) !important;
-    box-shadow: inset 0 0 4px rgba(22, 28, 46, 1) !important;
-    background-color: #DDD !important;
-    }
-}
-
-@mixin contentHeader {
-    width: 100%;
-    
-    h3 {
-        width: 100%;
-        padding: 0.8rem 0.5rem 0.4rem;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: $c-white;
-    }
-}
-
-@mixin barGradient($per) {
-    display: block;
-    width: 100%;
-    height: 1.6rem;
-    background: linear-gradient(to right, #FF453A, #C8BF08 $per, #32D74B);
-}
-
-@mixin ellipsis {
-    display: inline-block;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-@mixin innerBorder {
-    border: 5px solid #385D8A;
-    padding: 1rem;
-}
-
-
-
-
