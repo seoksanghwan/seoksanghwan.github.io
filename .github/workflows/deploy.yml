@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # 혹은 main (상환님의 기본 브랜치명)
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/admin-actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build
+        # 여기서 GitHub Secrets를 환경 변수로 주입합니다.
+        run: yarn build
+        env:
+          VITE_NOTION_TOKEN: ${{ secrets.VITE_NOTION_TOKEN }}
+          VITE_NOTION_DATABASE_ID: ${{ secrets.VITE_NOTION_DATABASE_ID }}
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages

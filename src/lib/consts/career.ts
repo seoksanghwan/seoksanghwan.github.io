@@ -42,7 +42,7 @@ export const careerData: Career[] = [
     ],
   },
   {
-    company: '주식회사 뉴럴비씨 (NeuralBC)',
+    company: '(주) 뉴럴비씨 (NeuralBC)',
     startDate: '2018.12',
     endDate: '2019.05',
     isGoing: false,
