@@ -2,8 +2,6 @@
 
 * {
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
 }
 
 html,
@@ -14,11 +12,13 @@ body {
   height: 100%;
   font-size: 8px;
   font-family: 'Pretendard', sans-serif, system-ui;
+
   @media (min-width: 2560px) {
     font-size: 10px;
   }
 }
 
+// 1. 마크다운 내부 요소가 아닌 태그들에만 초기 스타일 적용
 body,
 div,
 dl,
@@ -48,22 +48,36 @@ header,
 footer,
 section,
 article {
-  font-family: 'Poppins', sans-serif, system-ui;
-  font-size: 10px;
-  margin: 0;
-  padding: 0;
-  color: #293347;
-  font-weight: 200;
-  line-height: 1.2;
+  // .markdown-body 내부의 모든 자식 요소를 제외합니다.
+  &:not(.markdown-body, .markdown-body *) {
+    font-family: 'Poppins', sans-serif, system-ui;
+    font-size: 10px;
+    font-weight: 200;
+    line-height: 1.2;
+  }
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+
+// 2. 리스트 스타일 리셋 범위 제한
+ol,
+ul {
+  &:not(.markdown-body, .markdown-body *) {
+    list-style: none;
+  }
 }
-fieldset,
-img {
-  border: 0;
+
+// 3. 제목 및 기타 요소 리셋 범위 제한
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:not(.markdown-body, .markdown-body *) {
+    font-size: 100%;
+    font-weight: normal;
+  }
 }
+
 address,
 caption,
 cite,
@@ -73,90 +87,15 @@ em,
 strong,
 th,
 var {
-  font-style: normal;
-  font-weight: normal;
+  &:not(.markdown-body, .markdown-body *) {
+    font-style: normal;
+    font-weight: normal;
+  }
 }
-ol,
-ul {
-  list-style: none;
-}
-caption,
-th {
-  text-align: left;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-q:before,
-q:after {
-  content: '';
-}
-abbr,
-acronym {
-  border: 0;
-  font-variant: normal;
-}
-sup {
-  vertical-align: text-top;
-}
-sub {
-  vertical-align: text-bottom;
-}
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
-input,
-textarea,
-select {
-  font-size: 100%;
-}
-input[type='text'],
-input[type='tel'],
-input[type='email'],
-input[type='button'],
-input[type='submit'],
-input[type='reset'],
-select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-legend {
-  color: #293347;
-}
-legend,
-caption {
-  text-indent: -15000px;
-  height: 0;
-  width: 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-label,
-button {
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
+
 a {
-  color: #293347;
-  text-decoration: none;
-}
-i {
-  font-style: normal;
+  &:not(.markdown-body, .markdown-body *) {
+    color: #293347;
+    text-decoration: none;
+  }
 }

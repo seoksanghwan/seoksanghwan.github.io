@@ -3,20 +3,21 @@
 
 header {
   width: 100%;
-  max-width: 1200px;
+  // max-width: 1200px;
   margin: auto;
   padding: 1.9rem 0;
   background: #fff;
   position: sticky;
+  z-index: 10;
   top: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
   .nav-content {
     display: flex;
     margin: 0 auto;
     width: 100%;
+    max-width: 1200px;
     @include mq('tablet') {
-      width: 90%;
-    }
-    @include mq('mobile') {
       width: 90%;
     }
     .container {
