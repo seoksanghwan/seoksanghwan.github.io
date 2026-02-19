@@ -1,25 +1,22 @@
 import ReactMarkdown from 'react-markdown';
 import rehypeHighlight from 'rehype-highlight';
 import remarkGfm from 'remark-gfm';
-import { useQuery } from '@tanstack/react-query';
-import { getProjectMarkdown, ProjectPost } from '@/utils/notion';
+// useQuery와 getProjectMarkdown 임포트는 이제 필요 없습니다.
+import { ProjectPost } from '@/utils/notion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faExternalLinkAlt, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import 'highlight.js/styles/github-dark.css'; // 코드 하이라이트 스타일
+import 'highlight.js/styles/github-dark.css';
 import 'github-markdown-css/github-markdown-dark.css';
 
 interface Props {
-  project: ProjectPost;
+  project: ProjectPost & { content?: string }; // content 필드 타입을 포함시킵니다.
   onClose: () => void;
 }
 
 export const ProjectModal = ({ project, onClose }: Props) => {
-  const { data: markdown, isLoading } = useQuery({
-    queryKey: ['projectMarkdown', project.id],
-    queryFn: () => getProjectMarkdown(project.id),
-    enabled: !!project.id,
-    initialData: '',
-  });
+  // 1. useQuery 로직을 완전히 제거합니다.
+  // 2. 대신 fetch-notion.cjs에서 미리 구워둔 project.content를 바로 사용합니다.
+  const markdown = project.content || '';
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -28,14 +25,12 @@ export const ProjectModal = ({ project, onClose }: Props) => {
           <FontAwesomeIcon icon={faTimes} />
         </button>
 
-        {/* 1. 썸네일 영역 추가 */}
         {project.coverImage && (
           <div className="modal-thumbnail">
             <img src={project.coverImage} alt={project.title} />
           </div>
         )}
 
-        {/* 2. 기존 헤더 및 메타 정보 */}
         <header className="modal-header">
           <h2 className="modal-title">{project.title}</h2>
 
@@ -70,20 +65,13 @@ export const ProjectModal = ({ project, onClose }: Props) => {
 
         <hr className="modal-divider" />
 
-        {/* 3. 상세 본문 섹션 */}
         <div className="modal-body">
-          {isLoading ? (
-            <p>상세 내용을 불러오는 중입니다...</p>
-          ) : (
-            <div className="markdown-body" style={{ backgroundColor: 'none' }}>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]} // remarkPlugins에 추가
-                rehypePlugins={[rehypeHighlight]}
-              >
-                {markdown}
-              </ReactMarkdown>
-            </div>
-          )}
+          {/* 3. 로딩 상태 체크 없이 즉시 렌더링합니다. */}
+          <div className="markdown-body" style={{ backgroundColor: 'transparent' }}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
+              {markdown}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
     </div>
