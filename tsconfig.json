@@ -1,29 +1,41 @@
 {
   "compilerOptions": {
-    "target": "ESNext", // 1. 최신 자바스크립트 기능을 사용하도록 변경
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node", // 2. Vite 환경에 맞게 유지 또는 'bundler' 권장
+    "moduleResolution": "bundler", // Vite의 'node' 대신 Next.js 권장값인 'bundler' 사용
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "baseUrl": "src",
+    "jsx": "react-jsx", // Next.js는 자체 컴파일러를 위해 'preserve'를 사용합니다
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["*"]
-    },
-    /* 3. Vite 클라이언트 타입 선언 추가 */
-    "types": ["vite/client"]
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": [
-    "src",
-    "src/types/**/*.d.ts" // 4. 아까 만든 이미지 타입 선언 파일 경로 추가
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

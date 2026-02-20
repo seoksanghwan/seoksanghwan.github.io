@@ -5,7 +5,11 @@
  * @param isGoing - 현재 재직 여부
  * @returns - "X년 Y개월" 형태의 문자열
  */
-const getDuration = (startDateStr: string, endDateStr: string | null, isGoing: boolean): string => {
+export const getDuration = (
+  startDateStr: string,
+  endDateStr: string | null,
+  isGoing: boolean,
+): string => {
   if (!startDateStr) return '';
 
   // "2024.5" 또는 "2019.05" 분리
