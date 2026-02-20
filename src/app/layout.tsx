@@ -38,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         <Navigation />
         <main className="min-h-[calc(100dvh-131px)] max-h-full">{children}</main>
-        
         <Footer />
       </body>
     </html>

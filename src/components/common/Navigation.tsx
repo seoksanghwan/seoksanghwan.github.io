@@ -5,7 +5,7 @@ import { navItems } from '@/lib/consts/nav';
 import { NavLink } from './NavLink';
 
 export const Navigation = () => (
-  <header className="w-full m-auto py-[1.9rem] bg-white sticky top-0 z-10 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+  <header className="w-full m-auto py-[1.9rem] bg-white sticky top-0 z-10 shadow-[0_2px_8px_rgba(0,0,0,0.06)] z-100">
     <nav className="nav-content flex mx-auto w-full max-w-[1200px] max-tablet:w-[90%]" aria-label="메인 메뉴">
       <div className="w-full mx-auto flex justify-between items-center">
         <div className="title-logo min-h-13">
