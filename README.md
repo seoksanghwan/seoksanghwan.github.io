@@ -1,19 +1,20 @@
-## Introduction
-Front-end 개발자 프로젝트 리스트 및 소개페이지 입니다.
-seoksanghwan 랜딩페이지.
-이 프로젝트는 랜딩페이지만 포함하고 있습니다.
-notion API를 활용해 데이터를 관리합니다.
+# 🚀 FE Project: Front-end Engineer Portfolio
+프론트엔드 개발자 석상환 포트폴리오 사이트입니다.
 
-## Installation
+## 🛠 Tech Stack
 
-```
-npm
+| Category | Tech Stack |
+| :--- | :--- |
+| **Core** | React, Next.js, TypeScript, JavaScript |
+| **Styling** | Tailwind CSS|
+| **Data Management** | Notion API (Headless CMS) |
+
+### Installation
+```bash
+# npm 사용 시
 npm install
-npm start
-```
+npm dev
 
-```
-yarn
+# yarn 사용 시
 yarn install
-yarn start
-```
+yarn dev
