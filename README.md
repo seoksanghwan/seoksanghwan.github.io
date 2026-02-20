@@ -1,5 +1,6 @@
 # 🚀 FE Project: Front-end Engineer Portfolio
-프론트엔드 개발자 석상환 포트폴리오 사이트입니다.
+프론트엔드 개발자 석상환 포트폴리오 사이트입니다.<br/>
+[https://seoksanghwan-portfolio.vercel.app/about](https://seoksanghwan-portfolio.vercel.app/about)
 
 ## 🛠 Tech Stack
 
