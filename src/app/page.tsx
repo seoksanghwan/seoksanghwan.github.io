@@ -42,7 +42,7 @@ export default async function HomePage() {
               <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
               <p className="text-slate-600 line-clamp-2 mb-4">{project.description}</p>
               <div className="text-sm text-slate-400">
-                {project.period.start} — {project.period.end || 'Present'}
+                {project.startDate} — {project.endDate || 'Present'}
               </div>
             </div>
           </article>
