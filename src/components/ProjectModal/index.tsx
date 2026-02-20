@@ -39,7 +39,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         <ModalCloseButton onClose={onClose} />
 
         {project.coverImage && (
-          <div className="w-full mx-auto h-[350px] overflow-hidden max-md:w-[calc(100%+40px)] max-md:mx-auto max-md:mb-[3rem] max-md:h-[200px]">
+          <div className="w-full mx-auto bg-white h-[350px] overflow-hidden max-md:w-[calc(100%+40px)] max-md:mx-auto max-md:mb-[3rem] max-md:h-[200px]">
             <img
               src={project.coverImage}
               className="w-full h-full object-cover block"
